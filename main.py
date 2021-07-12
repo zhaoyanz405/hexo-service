@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route('/docker/lakeeee')
 def restart_lakeeee():
     os.system("docker restart lakeeee")
-    return 0
+    return "success"
 
 
 if __name__ == '__main__':
