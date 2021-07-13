@@ -9,7 +9,14 @@ app = Flask(__name__)
 @app.route('/hexo-service/docker/lakeeee')
 def restart_lakeeee():
     os.system("docker restart lakeeee")
-    return "success"
+    return "restart lakeeee success"
+
+
+@app.route('/hexo-service/docker/nginx')
+def restart_lakeeee():
+    os.system("docker restart nginx")
+    return "restart nginx success"
+
 
 @app.route('/hexo-service/git/pull')
 def git_pull():
