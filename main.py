@@ -17,7 +17,7 @@ def restart_lakeeee():
             if resp.status_code == 200:
                 break
         except:
-            print(f'try to connect {url} failed.')
+            print('try to connect %s failed.' % url)
 
     return "restart lakeeee success"
 
@@ -33,7 +33,7 @@ def restart_nginx():
             if resp.status_code == 200:
                 break
         except:
-            print(f'try to connect {url} failed.')
+            print('try to connect %s failed.' % url)
 
     return "restart nginx success"
 
