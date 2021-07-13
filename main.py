@@ -33,7 +33,8 @@ def restart_nginx():
 
 @app.route('/hexo-service/git/pull')
 def git_pull():
-    os.system("cd /home/zhaoy/hexo-box/lakeeee && git pull origin master")
+    os.system("cd /home/zhaoy/hexo-box/lakeeee && "
+              "git fetch --all && git reset --hard origin/master")
     return "git pull success"
 
 
