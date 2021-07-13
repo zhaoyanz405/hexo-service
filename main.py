@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
+import time
+
 import requests
 from flask import Flask
 
@@ -18,6 +20,7 @@ def restart_lakeeee():
                 break
         except:
             print('try to connect %s failed.' % url)
+            time.sleep(1)
 
     return "restart lakeeee success"
 
@@ -34,6 +37,7 @@ def restart_nginx():
                 break
         except:
             print('try to connect %s failed.' % url)
+            time.sleep(1)
 
     return "restart nginx success"
 
