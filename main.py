@@ -13,7 +13,7 @@ def restart_lakeeee():
 
 
 @app.route('/hexo-service/docker/nginx')
-def restart_lakeeee():
+def restart_nginx():
     os.system("docker restart nginx")
     return "restart nginx success"
 
