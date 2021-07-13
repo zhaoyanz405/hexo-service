@@ -14,7 +14,7 @@ def restart_lakeeee():
 
 @app.route('/hexo-service/docker/nginx')
 def restart_nginx():
-    os.system("docker restart nginx")
+    os.system("docker restart nginx &")
     return "restart nginx success"
 
 
