@@ -10,21 +10,30 @@ app = Flask(__name__)
 def restart_lakeeee():
     os.system("docker restart lakeeee")
 
+    url = "http://127.0.0.1:4000"
     while True:
-        resp = requests.get("http://127.0.0.1:4000")
-        if resp.status_code == 200:
-            break
+        try:
+            resp = requests.get(url)
+            if resp.status_code == 200:
+                break
+        except:
+            print(f'try to connect {url} failed.')
 
     return "restart lakeeee success"
 
 
 @app.route('/hexo-service/docker/nginx')
 def restart_nginx():
-    os.system("docker restart nginx &")
+    os.system("docker restart nginx")
+
+    url = "http://127.0.0.1:80"
     while True:
-        resp = requests.get("http://127.0.0.1:80")
-        if resp.status_code == 200:
-            break
+        try:
+            resp = requests.get(url)
+            if resp.status_code == 200:
+                break
+        except:
+            print(f'try to connect {url} failed.')
 
     return "restart nginx success"
 
