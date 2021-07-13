@@ -28,17 +28,6 @@ def restart_lakeeee():
 @app.route('/hexo-service/docker/nginx')
 def restart_nginx():
     os.system("docker restart nginx")
-
-    url = "http://127.0.0.1:80"
-    while True:
-        try:
-            resp = requests.get(url)
-            if resp.status_code == 200:
-                break
-        except:
-            print('try to connect %s failed.' % url)
-            time.sleep(1)
-
     return "restart nginx success"
 
 
